@@ -14,4 +14,6 @@ See [Getting Started with X-modaler](https://xmodaler.readthedocs.io/en/latest/t
 
 ### Training & Evaluation in Command Line
 
+We provide a script in "train_net.py", that is made to train all the configs provided in X-modaler. You may want to use it as a reference to write your own training script.
 
+To train a model(e.g., [UpDown](https://drive.google.com/drive/folders/1vx9n7tAIt8su0y_3tsPJGvMPBMm8JLCZ)， CLIP) with "train_net.py", first setup the corresponding datasets following datasets, then run:
