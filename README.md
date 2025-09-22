@@ -12,8 +12,27 @@ See [installation instructions](https://xmodaler.readthedocs.io/en/latest/tutori
 ## Getting Started 
 See [Getting Started with X-modaler](https://xmodaler.readthedocs.io/en/latest/tutorials/getting_started.html)
 
-### Training & Evaluation in Command Line
+# Training with X-modaler
 
-We provide a script in "train_net.py", that is made to train all the configs provided in X-modaler. You may want to use it as a reference to write your own training script.
+We provide a general training script, **`train_net.py`**, which can be used to train all configurations in **X-modaler**.  
+You can either run it directly or use it as a reference to write your own customized training script.
 
-To train a model(e.g., [UpDown](https://drive.google.com/drive/folders/1vx9n7tAIt8su0y_3tsPJGvMPBMm8JLCZ),  [CLIP-feature](https://github.com/jianjieluo/OpenAI-CLIP-Feature) with "train_net.py", first setup the corresponding datasets following datasets, then run:
+---
+
+## Environment Setup
+You can follow the setup instructions in [**SCD_Net**](https://github.com/YehLi/xmodaler/tree/master) to construct your environment.
+
+---
+
+## Training
+
+To train a model (e.g., [UpDown](https://drive.google.com/drive/folders/1vx9n7tAIt8su0y_3tsPJGvMPBMm8JLCZ), [CLIP-feature](https://github.com/jianjieluo/OpenAI-CLIP-Feature)) with **`train_net.py`**, first prepare the corresponding datasets as described in the dataset section, then run:
+
+### 1. Teacher Forcing
+```bash
+python train_net.py --num-gpus 4 \
+    --config-file configs/image_caption/scdnet/stage1/diffusion.yaml
+
+### 2. Reinforcement Learning
+python train_net.py --num-gpus 4 \
+    --config-file configs/image_caption/scdnet/stage1/diffusion_rl.yaml
